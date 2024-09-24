@@ -1,1 +1,10 @@
-# Ansible
+At first, system administrators manually handled upgrades, security patches, and software installations across hundreds of servers, often using custom shell scripts that looped over all the servers. However, as cloud infrastructure and microservices architecture expanded, the number of servers increased, and so did the need for consistent configurations across different environments. These shell scripts could become error-prone, especially with OS differences (e.g., Ubuntu vs. Alpine). This led to the rise of configuration management tools like Puppet, Chef, and Ansible, which simplified managing large-scale infrastructure in a consistent and automated way.
+
+Ansible uses a push-based model, meaning you can run an Ansible playbook from a central location (the control node) to push updates or configurations to target machines (the managed nodes). Ansible is agentless, so you don’t need to install a separate agent on the managed machines. You simply list the DNS names or IP addresses of the servers in an inventory file. Ansible communicates with Linux machines over SSH (with passwordless authentication typically recommended) and requires Python (usually Python 2 or 3) to be installed, which is standard in most Linux distributions.
+
+Ansible supports dynamic inventory, which allows it to automatically gather details about your infrastructure from cloud providers like AWS, Azure, and Google Cloud. Instead of manually updating the inventory file, Ansible can query the cloud provider’s API to dynamically include the new servers that have been created.
+
+Ansible supports Linux distributions (such as Ubuntu, CentOS, Red Hat, and others), Windows, and AIX (IBM's Unix-based OS), as well as other systems. While Ansible communicates with Linux over SSH using Python, it manages Windows systems via WinRM (Windows Remote Management), and AIX systems can be managed similarly to Linux systems using SSH.
+
+Ansible is known for its simplicity, using YAML files (called playbooks) to define configurations and automation tasks in a human-readable format. YAML syntax is easy to learn and read, making Ansible approachable for teams without deep programming knowledge.
+
